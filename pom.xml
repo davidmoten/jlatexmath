@@ -40,5 +40,6 @@
         <module>jlatexmath</module>
 	<module>jlatexmath-fop</module>
 	<module>jlatexmath-example-giws</module>
+	<module>jlatexmath-example-export</module>
     </modules>
 </project>
