@@ -7,7 +7,37 @@
     <version>1.0.5-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
+	<url>http://forge.scilab.org/index.php/p/jlatexmath</url>
+
+    <licenses>
+        <license>
+            <name>GPLv2 with Classpath Exception</name>
+            <url>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ledru</id>
+            <name>Sylvestre Ledru</name>
+        </developer>
+        <developer>
+            <id>denizet</id>
+            <name>Calixte Denizet</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>git://git.forge.scilab.org/jlatexmath.git</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <modules>
         <module>jlatexmath</module>
+	<module>jlatexmath-fop</module>
     </modules>
 </project>
