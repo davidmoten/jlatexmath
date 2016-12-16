@@ -39,5 +39,6 @@
     <modules>
         <module>jlatexmath</module>
 	<module>jlatexmath-fop</module>
+	<module>jlatexmath-example-giws</module>
     </modules>
 </project>
