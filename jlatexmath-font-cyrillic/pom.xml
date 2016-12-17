@@ -7,23 +7,19 @@
         <artifactId>jlatexmath-parent</artifactId>
         <version>1.0.5-SNAPSHOT</version>
     </parent>
-    <artifactId>jlatexmath</artifactId>
+    <artifactId>jlatexmath-font-cyrillic</artifactId>
     <packaging>jar</packaging>
-    <name>${project.artifactId}</name>
-    <description>A Java API to render LaTeX</description>
 
+    <name>${project.artifactId}</name>
+    <description>TODO</description>
+    
     <dependencies>
-		<dependency>
-		    <groupId>${project.parent.groupId}</groupId>
-			<artifactId>jlatexmath-font-cyrillic</artifactId>
-            <version>${project.parent.version}</version>
-		</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>       
     </dependencies>
-
+  
 </project>
