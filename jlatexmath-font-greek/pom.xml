@@ -7,10 +7,10 @@
         <artifactId>jlatexmath-parent</artifactId>
         <version>1.0.5-SNAPSHOT</version>
     </parent>
-    <artifactId>jlatexmath-font-cyrillic</artifactId>
+    <artifactId>jlatexmath-font-greek</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
     <description>TODO</description>
-  
+    
 </project>
