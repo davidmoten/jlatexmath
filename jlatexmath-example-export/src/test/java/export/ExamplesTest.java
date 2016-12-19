@@ -44,13 +44,9 @@
  */
 package export;
 
-import org.junit.Test;
+import java.io.File;
 
-import export.Example1;
-import export.Example2;
-import export.Example3;
-import export.Example4;
-import export.Example5;
+import org.junit.Test;
 
 public class ExamplesTest {
     
@@ -77,6 +73,13 @@ public class ExamplesTest {
     @Test
     public void testExample5() {
         Example5.main(new String[0]);
+    }
+    
+    @Test
+    public void testURI() {
+        String s = "jar:file:/C:/Users/david/.m2/repository/org/scilab/forge/jlatexmath/1.0.5-SNAPSHOT/jlatexmath-1.0.5-SNAPSHOT.jar!/org/scilab/forge/jlatexmath/fonts/latin/optional/jlm_cmss10.ttf";
+        File f = new File(s);
+        System.out.println(f.exists());
     }
 
 }

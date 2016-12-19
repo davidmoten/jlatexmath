@@ -44,23 +44,7 @@
  */
 package export;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.JLabel;
-
-import org.scilab.forge.jlatexmath.TeXConstants; 
-import org.scilab.forge.jlatexmath.TeXFormula;
-import org.scilab.forge.jlatexmath.TeXIcon;
 
 /**
  * A class to test LaTeX rendering.
@@ -93,6 +77,8 @@ public class Example1 {
             Convert.SVGTo("Example1_shaped.svg", "Example1_shaped.pdf", Convert.PDF);
             Convert.SVGTo("Example1.svg", "Example1.ps", Convert.PS);
             Convert.SVGTo("Example1.svg", "Example1.eps", Convert.EPS);
-        } catch (IOException ex) {}
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }    
 }

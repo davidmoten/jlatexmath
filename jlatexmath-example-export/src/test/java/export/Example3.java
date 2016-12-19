@@ -44,30 +44,14 @@
  */
 package export;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.JLabel;
-
-import org.scilab.forge.jlatexmath.TeXConstants; 
-import org.scilab.forge.jlatexmath.TeXFormula;
-import org.scilab.forge.jlatexmath.TeXIcon;
 
 /**
  * A class to test LaTeX rendering.
  **/
 public class Example3 {
     public static void main(String[] args) {
-        
+
         String latex = "\\definecolor{gris}{gray}{0.9}";
         latex += "\\definecolor{noir}{rgb}{0,0,0}";
         latex += "\\definecolor{bleu}{rgb}{0,0,1}\\newcommand{\\pa}{\\left|}";
@@ -88,14 +72,16 @@ public class Example3 {
         latex += "\\end{split}\\\\";
         latex += "\\rotatebox{30}{\\sum_{n=1}^{+\\infty}}\\quad\\mbox{Mirror rorriM}\\reflectbox{\\mbox{Mirror rorriM}}";
         latex += "\\end{array}";
-  
-	try {
-	    Convert.toSVG(latex, "Example3.svg", false);
+
+        try {
+            Convert.toSVG(latex, "Example3.svg", false);
             Convert.toSVG(latex, "Example3_shaped.svg", true);
             Convert.SVGTo("Example3.svg", "Example3.pdf", Convert.PDF);
             Convert.SVGTo("Example3_shaped.svg", "Example3_shaped.pdf", Convert.PDF);
             Convert.SVGTo("Example3.svg", "Example3.ps", Convert.PS);
             Convert.SVGTo("Example3.svg", "Example3.eps", Convert.EPS);
-	} catch (IOException ex) {}
-    }      
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

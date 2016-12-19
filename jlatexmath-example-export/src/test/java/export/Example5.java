@@ -44,47 +44,33 @@
  */
 package export;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.JLabel;
-
-import org.scilab.forge.jlatexmath.TeXConstants; 
-import org.scilab.forge.jlatexmath.TeXFormula;
-import org.scilab.forge.jlatexmath.TeXIcon;
 
 /**
  * A class to test LaTeX rendering.
  **/
 public class Example5 {
     public static void main(String[] args) {
-	
-	String latex = "\\begin{array}{|c|l|||r|c|}";
-	latex += "\\hline";
-	latex += "\\text{Matrix}&\\multicolumn{2}{|c|}{\\text{Multicolumns}}&\\text{Font sizes commands}\\cr";
-	latex += "\\hline";
-	latex += "\\begin{pmatrix}\\alpha_{11}&\\cdots&\\alpha_{1n}\\cr\\hdotsfor{3}\\cr\\alpha_{n1}&\\cdots&\\alpha_{nn}\\end{pmatrix}&\\Large \\text{Large Right}&\\small \\text{small Left}&\\tiny \\text{tiny Tiny}\\cr";
-	latex += "\\hline";
-	latex += "\\multicolumn{4}{|c|}{\\Huge \\text{Huge Multicolumns}}\\cr";
-	latex += "\\hline";
-	latex += "\\end{array}";
+
+        String latex = "\\begin{array}{|c|l|||r|c|}";
+        latex += "\\hline";
+        latex += "\\text{Matrix}&\\multicolumn{2}{|c|}{\\text{Multicolumns}}&\\text{Font sizes commands}\\cr";
+        latex += "\\hline";
+        latex += "\\begin{pmatrix}\\alpha_{11}&\\cdots&\\alpha_{1n}\\cr\\hdotsfor{3}\\cr\\alpha_{n1}&\\cdots&\\alpha_{nn}\\end{pmatrix}&\\Large \\text{Large Right}&\\small \\text{small Left}&\\tiny \\text{tiny Tiny}\\cr";
+        latex += "\\hline";
+        latex += "\\multicolumn{4}{|c|}{\\Huge \\text{Huge Multicolumns}}\\cr";
+        latex += "\\hline";
+        latex += "\\end{array}";
 
         try {
-	    Convert.toSVG(latex, "Example5.svg", false);
+            Convert.toSVG(latex, "Example5.svg", false);
             Convert.toSVG(latex, "Example5_shaped.svg", true);
             Convert.SVGTo("Example5.svg", "Example5.pdf", Convert.PDF);
             Convert.SVGTo("Example5_shaped.svg", "Example5_shaped.pdf", Convert.PDF);
             Convert.SVGTo("Example5.svg", "Example5.ps", Convert.PS);
             Convert.SVGTo("Example5.svg", "Example5.eps", Convert.EPS);
-	} catch (IOException ex) {}
-    }    
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

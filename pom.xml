@@ -35,7 +35,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
-        <fop.version>2.1</fop.version>
+        <fop.version>0.95</fop.version>
         <junit.version>4.12</junit.version>
         <batik.version>1.8</batik.version>
     </properties>

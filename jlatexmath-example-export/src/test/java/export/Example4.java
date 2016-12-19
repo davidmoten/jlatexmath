@@ -58,7 +58,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 
-import org.scilab.forge.jlatexmath.TeXConstants; 
+import org.scilab.forge.jlatexmath.TeXConstants;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.TeXIcon;
 
@@ -67,16 +67,18 @@ import org.scilab.forge.jlatexmath.TeXIcon;
  **/
 public class Example4 {
     public static void main(String[] args) {
-	
-	String latex = "\\mbox{An image from the \\LaTeX3 project }\\includegraphics{lion.png}"; 
-        
+
+        String latex = "\\mbox{An image from the \\LaTeX3 project }\\includegraphics{lion.png}";
+
         try {
-	    Convert.toSVG(latex, "Example4.svg", false);
+            Convert.toSVG(latex, "Example4.svg", false);
             Convert.toSVG(latex, "Example4_shaped.svg", true);
             Convert.SVGTo("Example4.svg", "Example4.pdf", Convert.PDF);
             Convert.SVGTo("Example4_shaped.svg", "Example4_shaped.pdf", Convert.PDF);
             Convert.SVGTo("Example4.svg", "Example4.ps", Convert.PS);
             Convert.SVGTo("Example4.svg", "Example4.eps", Convert.EPS);
-	} catch (IOException ex) {}
-    }    
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }
