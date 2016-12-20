@@ -25,16 +25,6 @@
 			<version>${fop.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.avalon.framework</groupId>
-			<artifactId>avalon-framework-api</artifactId>
-			<version>4.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avalon.framework</groupId>
-			<artifactId>avalon-framework-impl</artifactId>
-			<version>4.3.1</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>

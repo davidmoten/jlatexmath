@@ -49,7 +49,7 @@ import java.io.File;
 import org.junit.Test;
 
 public class ExamplesTest {
-    
+
     @Test
     public void testExample1() {
         Example1.main(new String[0]);
@@ -74,7 +74,7 @@ public class ExamplesTest {
     public void testExample5() {
         Example5.main(new String[0]);
     }
-    
+
     @Test
     public void testURI() {
         String s = "jar:file:/C:/Users/david/.m2/repository/org/scilab/forge/jlatexmath/1.0.5-SNAPSHOT/jlatexmath-1.0.5-SNAPSHOT.jar!/org/scilab/forge/jlatexmath/fonts/latin/optional/jlm_cmss10.ttf";
