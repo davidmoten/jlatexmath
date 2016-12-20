@@ -1,4 +1,4 @@
-package basic;
+package org.scilab.forge.jlatexmath.examples.basic;
 import java.awt.Dimension;
 
 import javax.swing.BorderFactory;

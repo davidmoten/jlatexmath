@@ -1,8 +1,8 @@
-/* Main.java
+/* Example6.java
  * =========================================================================
  * This file is part of the JLaTeXMath Library - http://jlatexmath.sourceforge.net
  * 
- * Copyright (C) 2009 DENIZET Calixte
+ * Copyright (C) 2011 DENIZET Calixte
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,44 +42,57 @@
  * version.
  * 
  */
-package export;
+package org.scilab.forge.jlatexmath.examples.basic;
 
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.Insets;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-import org.junit.Test;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.JLabel;
 
-public class ExamplesTest {
+import org.scilab.forge.jlatexmath.TeXConstants; 
+import org.scilab.forge.jlatexmath.TeXFormula;
+import org.scilab.forge.jlatexmath.TeXIcon;
 
-    @Test
-    public void testExample1() {
-        Example1.main(new String[0]);
-    }
+/**
+ * A class to test LaTeX rendering.
+ **/
+public class Example7 {
+	public static void main(String[] args) throws IOException {
 
-    @Test
-    public void testExample2() {
-        Example2.main(new String[0]);
-    }
+		String latex = "\\mbox{abc abc abc abc abc abc abc abc abc abc abc abc abc abc\\\\abc abc abc abc abc abc abc\\\\abc abc abc abc abc abc abc}\\\\1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1";
+		TeXFormula formula = new TeXFormula(latex);
+		formula.setDEBUG(true);
+		
+		// Note: Old interface for creating icons:
+		//TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 30, TeXConstants.UNIT_CM, 4, TeXConstants.ALIGN_LEFT, TeXConstants.UNIT_CM, 0.5f);
+		// Note: New interface using builder pattern (inner class):
+		TeXIcon icon = formula.new TeXIconBuilder()
+				.setStyle(TeXConstants.STYLE_DISPLAY)
+				.setSize(30)
+				.setWidth(TeXConstants.UNIT_CM, 4, TeXConstants.ALIGN_LEFT)
+				.setInterLineSpacing(TeXConstants.UNIT_CM, 0.5f)
+				.build();
+				
 
-    @Test
-    public void testExample3() {
-        Example3.main(new String[0]);
-    }
+		icon.setInsets(new Insets(5, 5, 5, 5));
 
-    @Test
-    public void testExample4() {
-        Example4.main(new String[0]);
-    }
-
-    @Test
-    public void testExample5() {
-        Example5.main(new String[0]);
-    }
-
-    @Test
-    public void testURI() {
-        String s = "jar:file:/C:/Users/david/.m2/repository/org/scilab/forge/jlatexmath/1.0.5-SNAPSHOT/jlatexmath-1.0.5-SNAPSHOT.jar!/org/scilab/forge/jlatexmath/fonts/latin/optional/jlm_cmss10.ttf";
-        File f = new File(s);
-        System.out.println(f.exists());
-    }
-
+		BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+		Graphics2D g2 = image.createGraphics();
+		g2.setColor(Color.white);
+		g2.fillRect(0,0,icon.getIconWidth(),icon.getIconHeight());
+		JLabel jl = new JLabel();
+		jl.setForeground(new Color(0, 0, 0));
+		icon.paintIcon(jl, g2, 0, 0);
+		File file = new File("target/Example7.png");
+			ImageIO.write(image, "png", file.getAbsoluteFile());
+	}    
 }

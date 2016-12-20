@@ -42,61 +42,44 @@
  * version.
  * 
  */
-package macros;
+package org.scilab.forge.jlatexmath.examples.export;
 
-import static org.junit.Assert.assertNotNull;
-
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.imageio.ImageIO;
-import javax.swing.JLabel;
 
 import org.junit.Test;
-import org.scilab.forge.jlatexmath.ResourceParseException;
-import org.scilab.forge.jlatexmath.TeXConstants;
-import org.scilab.forge.jlatexmath.TeXFormula;
-import org.scilab.forge.jlatexmath.TeXIcon;
 
-/**
- * A class to test LaTeX rendering.
- **/
-public class FooPackageTest {
+public class ExamplesTest {
 
     @Test
-    public void testUseCustomPackage() throws ResourceParseException, FileNotFoundException {
-        InputStream is = FooPackageTest.class.getResourceAsStream("/Package_Foo.xml");
-        assertNotNull(is);
-        TeXFormula.addPredefinedCommands(is);
-        String latex = "\\begin{array}{l}";
-        latex += "\\fooA{\\pi}{C}\\\\";
-        latex += "\\mbox{A red circle }\\fooB{75.3}\\\\";
-        latex += "\\mbox{A red disk }\\fooC[abc]{126.7}\\\\";
-        latex += "\\mbox{An other red circle }\\fooD{159.81}[ab]";
-        latex += "\\end{array}";
-
-        TeXFormula formula = new TeXFormula(latex);
-        TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20);
-        icon.setInsets(new Insets(5, 5, 5, 5));
-
-        BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(),
-                BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = image.createGraphics();
-        g2.setColor(Color.white);
-        g2.fillRect(0, 0, icon.getIconWidth(), icon.getIconHeight());
-        JLabel jl = new JLabel();
-        jl.setForeground(new Color(0, 0, 0));
-        icon.paintIcon(jl, g2, 0, 0);
-        File file = new File("target/Example.png");
-        try {
-            ImageIO.write(image, "png", file.getAbsoluteFile());
-        } catch (IOException ex) {
-        }
+    public void testExample1() {
+        Example1.main(new String[0]);
     }
+
+    @Test
+    public void testExample2() {
+        Example2.main(new String[0]);
+    }
+
+    @Test
+    public void testExample3() {
+        Example3.main(new String[0]);
+    }
+
+    @Test
+    public void testExample4() {
+        Example4.main(new String[0]);
+    }
+
+    @Test
+    public void testExample5() {
+        Example5.main(new String[0]);
+    }
+
+    @Test
+    public void testURI() {
+        String s = "jar:file:/C:/Users/david/.m2/repository/org/scilab/forge/jlatexmath/1.0.5-SNAPSHOT/jlatexmath-1.0.5-SNAPSHOT.jar!/org/scilab/forge/jlatexmath/fonts/latin/optional/jlm_cmss10.ttf";
+        File f = new File(s);
+        System.out.println(f.exists());
+    }
+
 }

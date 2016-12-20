@@ -1,4 +1,4 @@
-package export;
+package org.scilab.forge.jlatexmath.examples.export;
 
 import java.awt.Color;
 import java.awt.Dimension;

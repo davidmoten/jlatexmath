@@ -42,7 +42,7 @@
  * version.
  * 
  */
-package basic;
+package org.scilab.forge.jlatexmath.examples.basic;
 
 import static org.junit.Assert.assertTrue;
 

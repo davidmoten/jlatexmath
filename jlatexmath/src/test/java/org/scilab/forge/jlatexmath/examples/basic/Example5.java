@@ -2,7 +2,7 @@
  * =========================================================================
  * This file is part of the JLaTeXMath Library - http://jlatexmath.sourceforge.net
  * 
- * Copyright (C) 2009 DENIZET Calixte
+ * Copyright (C) 2010 DENIZET Calixte
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,35 +42,43 @@
  * version.
  * 
  */
-package export;
+package org.scilab.forge.jlatexmath.examples.basic;
 
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.Insets;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.JLabel;
+
+import org.scilab.forge.jlatexmath.TeXConstants; 
+import org.scilab.forge.jlatexmath.TeXFormula;
 
 /**
  * A class to test LaTeX rendering.
  **/
 public class Example5 {
+    
     public static void main(String[] args) {
-
-        String latex = "\\begin{array}{|c|l|||r|c|}";
-        latex += "\\hline";
-        latex += "\\text{Matrix}&\\multicolumn{2}{|c|}{\\text{Multicolumns}}&\\text{Font sizes commands}\\cr";
-        latex += "\\hline";
-        latex += "\\begin{pmatrix}\\alpha_{11}&\\cdots&\\alpha_{1n}\\cr\\hdotsfor{3}\\cr\\alpha_{n1}&\\cdots&\\alpha_{nn}\\end{pmatrix}&\\Large \\text{Large Right}&\\small \\text{small Left}&\\tiny \\text{tiny Tiny}\\cr";
-        latex += "\\hline";
-        latex += "\\multicolumn{4}{|c|}{\\Huge \\text{Huge Multicolumns}}\\cr";
-        latex += "\\hline";
-        latex += "\\end{array}";
-
-        try {
-            Convert.toSVG(latex, "Example5.svg", false);
-            Convert.toSVG(latex, "Example5_shaped.svg", true);
-            Convert.SVGTo("Example5.svg", "Example5.pdf", Convert.PDF);
-            Convert.SVGTo("Example5_shaped.svg", "Example5_shaped.pdf", Convert.PDF);
-            Convert.SVGTo("Example5.svg", "Example5.ps", Convert.PS);
-            Convert.SVGTo("Example5.svg", "Example5.eps", Convert.EPS);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+	
+	String latex = "\\begin{array}{|c|l|||r|c|}";
+	latex += "\\hline";
+	latex += "\\text{Matrix}&\\multicolumn{2}{|c|}{\\text{Multicolumns}}&\\text{Font sizes commands}\\cr";
+	latex += "\\hline";
+	latex += "\\begin{pmatrix}\\alpha_{11}&\\cdots&\\alpha_{1n}\\cr\\hdotsfor{3}\\cr\\alpha_{n1}&\\cdots&\\alpha_{nn}\\end{pmatrix}&\\Large \\text{Large Right}&\\small \\text{small Left}&\\tiny \\text{tiny Tiny}\\cr";
+	latex += "\\hline";
+	latex += "\\multicolumn{4}{|c|}{\\Huge \\text{Huge Multicolumns}}\\cr";
+	latex += "\\hline";
+	latex += "\\end{array}";
+	
+	TeXFormula formula = new TeXFormula(latex);
+	formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, "target/Example5.png", Color.white, Color.black);
+    }    
 }

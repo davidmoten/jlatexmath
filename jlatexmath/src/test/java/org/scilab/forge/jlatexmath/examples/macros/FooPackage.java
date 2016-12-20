@@ -43,7 +43,7 @@
  * 
  */
 
-package macros; 
+package org.scilab.forge.jlatexmath.examples.macros; 
 
 import org.scilab.forge.jlatexmath.Atom;
 import org.scilab.forge.jlatexmath.TeXParser;

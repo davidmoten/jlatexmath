@@ -42,7 +42,7 @@
  * version.
  * 
  */
-package export;
+package org.scilab.forge.jlatexmath.examples.export;
 
 import java.io.IOException;
 

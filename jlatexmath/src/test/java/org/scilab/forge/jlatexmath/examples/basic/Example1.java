@@ -42,7 +42,7 @@
  * version.
  * 
  */
-package basic;
+package org.scilab.forge.jlatexmath.examples.basic;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
