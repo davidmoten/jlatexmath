@@ -38,6 +38,7 @@
         <fop.version>2.1</fop.version>
         <junit.version>4.12</junit.version>
         <jar.plugin.version>3.0.2</jar.plugin.version>
+        <build.helper.plugin.version>1.12</build.helper.plugin.version>
     </properties>
 
     <modules>
