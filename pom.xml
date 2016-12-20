@@ -37,7 +37,7 @@
         <java.version>1.7</java.version>
         <fop.version>2.1</fop.version>
         <junit.version>4.12</junit.version>
-        <batik.version>1.8</batik.version>
+        <jar.plugin.version>3.0.2</jar.plugin.version>
     </properties>
 
     <modules>
