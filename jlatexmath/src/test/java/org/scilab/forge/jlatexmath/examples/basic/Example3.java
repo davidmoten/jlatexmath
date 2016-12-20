@@ -44,31 +44,26 @@
  */
 package org.scilab.forge.jlatexmath.examples.basic;
 
-import java.awt.Font;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Insets;
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.JLabel;
 
-import org.scilab.forge.jlatexmath.TeXConstants; 
+import org.scilab.forge.jlatexmath.TeXConstants;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.TeXIcon;
-import org.scilab.forge.jlatexmath.TeXFormula.TeXIconBuilder;
 
 /**
  * A class to test LaTeX rendering.
  **/
 public class Example3 {
     public static void main(String[] args) throws IOException {
-        
+
         String latex = "\\definecolor{gris}{gray}{0.9}";
         latex += "\\definecolor{noir}{rgb}{0,0,0}";
         latex += "\\definecolor{bleu}{rgb}{0,0,1}\\newcommand{\\pa}{\\left|}";
@@ -91,21 +86,23 @@ public class Example3 {
         latex += "\\end{array}";
 
         TeXFormula formula = new TeXFormula(latex);
-    	// Note: Old interface for creating icons:
-        //TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20);
-    	// Note: New interface using builder pattern (inner class):
-    	TeXIcon icon = formula.new TeXIconBuilder().setStyle(TeXConstants.STYLE_DISPLAY).setSize(20).build();
-        
+        // Note: Old interface for creating icons:
+        // TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20);
+        // Note: New interface using builder pattern (inner class):
+        TeXIcon icon = formula.new TeXIconBuilder().setStyle(TeXConstants.STYLE_DISPLAY).setSize(20)
+                .build();
+
         icon.setInsets(new Insets(5, 5, 5, 5));
-        
-        BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+
+        BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(),
+                BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = image.createGraphics();
         g2.setColor(Color.white);
-        g2.fillRect(0,0,icon.getIconWidth(),icon.getIconHeight());
+        g2.fillRect(0, 0, icon.getIconWidth(), icon.getIconHeight());
         JLabel jl = new JLabel();
         jl.setForeground(new Color(0, 0, 0));
         icon.paintIcon(jl, g2, 0, 0);
         File file = new File("target/Example3.png");
-            ImageIO.write(image, "png", file.getAbsoluteFile());
-    }    
+        ImageIO.write(image, "png", file.getAbsoluteFile());
+    }
 }

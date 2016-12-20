@@ -101,7 +101,7 @@ public class ExamplesTest {
             System.out.println("distance=" + distance);
             // TODO establish a reasonable threshold after running the tests on
             // different platforms (windows, osx, linux, others?)
-            double THRESHOLD = 1000;
+            double THRESHOLD = 20000;
             assertTrue("actual and expected images for " + filename + " are different sizes!",
                     distance >= 0);
             assertTrue("distance is above threshold, images are probably significantly different",
