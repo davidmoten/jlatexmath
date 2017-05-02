@@ -1,36 +1,32 @@
 package export;
 
-import java.awt.Insets;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.FileOutputStream;
+import java.awt.Insets;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+
 import javax.swing.JLabel;
 
-import org.scilab.forge.jlatexmath.TeXConstants; 
-import org.scilab.forge.jlatexmath.TeXFormula;
-import org.scilab.forge.jlatexmath.TeXIcon;
-import org.scilab.forge.jlatexmath.DefaultTeXFont;
-
-import org.scilab.forge.jlatexmath.cyrillic.CyrillicRegistration;
-import org.scilab.forge.jlatexmath.greek.GreekRegistration;
-
-import org.apache.batik.transcoder.TranscoderOutput;
-import org.apache.batik.transcoder.TranscoderInput;
-import org.apache.fop.svg.AbstractFOPTranscoder;
-import org.apache.fop.svg.PDFTranscoder;
-import org.apache.fop.render.ps.PSTranscoder;
-import org.apache.fop.render.ps.EPSTranscoder;
-import org.apache.avalon.framework.configuration.DefaultConfiguration;
-
+import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.svggen.SVGGeneratorContext;
 import org.apache.batik.svggen.SVGGraphics2D;
-import org.apache.batik.dom.GenericDOMImplementation;
-
+import org.apache.batik.transcoder.TranscoderInput;
+import org.apache.batik.transcoder.TranscoderOutput;
+import org.apache.fop.render.ps.EPSTranscoder;
+import org.apache.fop.render.ps.PSTranscoder;
+import org.apache.fop.svg.AbstractFOPTranscoder;
+import org.apache.fop.svg.PDFTranscoder;
+import org.scilab.forge.jlatexmath.DefaultTeXFont;
+import org.scilab.forge.jlatexmath.TeXConstants;
+import org.scilab.forge.jlatexmath.TeXFormula;
+import org.scilab.forge.jlatexmath.TeXIcon;
+import org.scilab.forge.jlatexmath.cyrillic.CyrillicRegistration;
+import org.scilab.forge.jlatexmath.greek.GreekRegistration;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 
