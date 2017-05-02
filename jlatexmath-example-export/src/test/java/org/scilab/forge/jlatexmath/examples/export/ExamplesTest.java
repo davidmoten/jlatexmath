@@ -81,14 +81,23 @@ public class ExamplesTest {
     @Test
     public void testExample4() throws TranscoderException, IOException {
         Example4.main(new String[0]);
-        TranscoderInput ti = new TranscoderInput(new FileInputStream("target/Example4.svg"));
-        FileOutputStream os = new FileOutputStream("target/Example4.png");
+        saveSvgAsPngAndCheck("Example4");
+    }
+
+    private static void saveSvgAsPngAndCheck(String name)
+            throws FileNotFoundException, TranscoderException, IOException {
+        saveSvgAsPng(name);
+        check(name + ".png");
+    }
+
+    private static void saveSvgAsPng(String name) throws FileNotFoundException, TranscoderException, IOException {
+        TranscoderInput ti = new TranscoderInput(new FileInputStream("target/" + name + ".svg"));
+        FileOutputStream os = new FileOutputStream("target/" + name + ".png");
         TranscoderOutput to = new TranscoderOutput(os);
         PNGTranscoder pt = new PNGTranscoder();
         pt.transcode(ti, to);
         os.flush();
         os.close();
-        check("Example4.png");
     }
 
     @Test
