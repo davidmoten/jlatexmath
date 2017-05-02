@@ -44,21 +44,17 @@
  */
 package org.scilab.forge.jlatexmath.examples.basic;
 
-import java.awt.Font;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Insets;
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.JLabel;
 
-import org.scilab.forge.jlatexmath.TeXConstants; 
+import org.scilab.forge.jlatexmath.TeXConstants;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.TeXIcon;
 
