@@ -64,18 +64,24 @@ import org.junit.Test;
 public class ExamplesTest {
 
     @Test
-    public void testExample1() {
+    public void testExample1() throws FileNotFoundException, TranscoderException, IOException {
         Example1.main(new String[0]);
+        saveSvgAsPngAndCheck("Example1");
+        saveSvgAsPngAndCheck("Example1_shaped");
     }
 
     @Test
-    public void testExample2() {
+    public void testExample2() throws FileNotFoundException, TranscoderException, IOException {
         Example2.main(new String[0]);
+        saveSvgAsPngAndCheck("Example2");
+        saveSvgAsPngAndCheck("Example2_shaped");
     }
 
     @Test
-    public void testExample3() {
+    public void testExample3() throws FileNotFoundException, TranscoderException, IOException {
         Example3.main(new String[0]);
+        saveSvgAsPngAndCheck("Example3");
+        saveSvgAsPngAndCheck("Example3_shaped");
     }
 
     @Test
