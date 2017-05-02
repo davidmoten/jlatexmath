@@ -82,6 +82,7 @@ public class ExamplesTest {
     public void testExample4() throws TranscoderException, IOException {
         Example4.main(new String[0]);
         saveSvgAsPngAndCheck("Example4");
+        saveSvgAsPngAndCheck("Example4_shaped");
     }
 
     private static void saveSvgAsPngAndCheck(String name)
