@@ -52,7 +52,7 @@ import java.io.IOException;
 public class Example4 {
     public static void main(String[] args) {
 
-        String latex = "\\mbox{An image from the \\LaTeX3 project }\\includegraphics{/lion.png}";
+        String latex = "\\mbox{An image from the \\LaTeX3 project }\\includegraphics{src/test/resources/lion.png}";
 
         try {
             Convert.toSVG(latex, "Example4.svg", false);
