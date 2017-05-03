@@ -43,7 +43,7 @@
 
     <modules>
         <module>jlatexmath-font-cyrillic</module>
-	<module>jlatexmath-font-greek</module>
+	    <module>jlatexmath-font-greek</module>
         <module>jlatexmath</module>
     	<module>jlatexmath-fop</module>
 		<module>jlatexmath-example-giws</module>
