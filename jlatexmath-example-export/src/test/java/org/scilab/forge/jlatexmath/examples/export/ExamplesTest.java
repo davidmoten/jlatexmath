@@ -83,7 +83,7 @@ public class ExamplesTest {
     @Test
     @Ignore
     public void testExample2() throws FileNotFoundException, TranscoderException, IOException {
-        // TODO get this working 
+        // TODO get this working (copy relevant fonts to some 
         Example2.main(new String[0]);
         saveSvgAsPngAndCheck("Example2");
     }
