@@ -34,7 +34,9 @@
     </developers>
 
     <scm>
-        <url>git://git.forge.scilab.org/jlatexmath.git</url>
+        <connection>${scm.url}</connection>
+		<developerConnection>${scm.url}</developerConnection>
+		<url>${scm.url}</url>
     </scm>
 
     <properties>
@@ -44,6 +46,7 @@
         <junit.version>4.12</junit.version>
         <jar.plugin.version>3.0.2</jar.plugin.version>
         <build.helper.plugin.version>1.12</build.helper.plugin.version>
+        <scm.url>scm:git:https://github.com/davidmoten/jlatexmath.git</scm.url>
     </properties>
 
     <modules>
